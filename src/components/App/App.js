@@ -40,11 +40,22 @@ export default function App() {
       }]
     })
   }
+  const onCheckedDone = (id) => {
+    let idx = list.findIndex(el => el.id === id)
+
+    console.log('id');
+    // setList((prevState) => [
+    //   ...prevState.slice(0, idx),
+    //   prevState[idx].done = !prevState[idx].done,
+    //   ...prevState.slice(idx)
+    // ])
+
+  }
 
   return (
     <Container className='mt-3 bg-secondary-subtle rounded p-4' >
       <Header onAddItem={addItemList} />
-      <Body data={list} />
+      <Body onCheckedDone={onCheckedDone} data={list} />
     </Container>
   )
 }

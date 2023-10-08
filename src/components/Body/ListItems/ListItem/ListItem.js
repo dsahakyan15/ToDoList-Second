@@ -3,7 +3,7 @@ import { FaPen, FaTrashCan, FaCircleInfo } from 'react-icons/fa6'
 import Timer from '../Timer/Timer'
 
 
-export default function ListItem({ data }) {
+export default function ListItem({ data,id,onCheckedDone }) {
 
   const { title, done, date } = data
 
@@ -14,9 +14,6 @@ export default function ListItem({ data }) {
   const timeIsOut = (date) => {
 
     const fiveDays = 5 * 24 * 60 * 60 * 1000
-
-    console.log(date)
-    
     if ((date - new Date()) < fiveDays) {
       return true
     }
@@ -28,7 +25,9 @@ export default function ListItem({ data }) {
 
   return (
     <div className='mb-1 mt-3 d-flex justify-content-between align-items-center'>
-      <Form.Check checked={done ? done : null} value={true} label={title} />
+      <Form.Check onChange={onCheckedDone(id)} checked={done ? done : null}  label={title} />
+
+
       {timeIsOut(itemDate) ? <Timer itemDate={itemDate} /> : null}
 
       <div>

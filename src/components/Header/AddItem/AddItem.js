@@ -13,6 +13,11 @@ export default function AddItem({ changeCalendar, onAddItem, dateValue }) {
     }
 
     const onHandleAdd = () => {
+        if(inputValue.length < 3){
+            return
+        }
+
+
         const date = `${dateVal.getMonth()+1} ${dateVal.getDate()} ${dateVal.getFullYear()}`
 
 

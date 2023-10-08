@@ -3,7 +3,6 @@ import { FaRegHourglassHalf } from 'react-icons/fa6'
 export default function Timer({itemDate} ) {
 
     const options = { month: "short" };
-    console.log(itemDate)
     const timeFormatMonth = new Intl.DateTimeFormat("en-US", options).format(new Date(itemDate));
 
     return (

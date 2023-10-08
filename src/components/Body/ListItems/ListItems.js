@@ -1,11 +1,11 @@
 import ListItem from "./ListItem"
 
-export default function ListItems({ data }) {
+export default function ListItems({ data,onCheckedDone }) {
     return (
         <div>
             {
                 data.map((obj) => {
-                return <ListItem data={obj} key={obj.key}/>
+                return <ListItem data={obj} id={obj.key} onCheckedDone={onCheckedDone} key={obj.key}/>
                 })
             }
 
