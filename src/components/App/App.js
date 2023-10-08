@@ -8,19 +8,19 @@ export default function App() {
   const [list, setList] = useState([
     {
       title: 'Buy groceries for next week',
-      date: '28Jun2020',
+      date: '28Jun2024',
       done: true,
       key: 1
     },
     {
       title: 'Renew car insurance',
-      date: '28Jun2020',
+      date: '10Oct2023',
       done: false,
       key: 2
     },
     {
       title: 'Sign up for online course',
-      date: '28Jun2020',
+      date: '28Jun2024',
       done: false,
       key: 3
     }
